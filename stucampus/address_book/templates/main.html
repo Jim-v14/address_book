@@ -9,7 +9,8 @@
 <body>
 	<div class="header">
 		<h1>学子通讯录</h1>
-		<h2>welcome  {{manager.managername}}</h2>
+		{% if managername %}<h2>welcome  {{managername}}</h2><a href="/logout/">退出</a><a href="/addMsg/">添加成员</a>
+		{% else %}<a href="/login/">管理员登陆</a>{%endif%}
 		 <form method="POST" >
          		  	<input type="text" name="search"><input type="submit" value="search">
        		 </form>	
@@ -24,13 +25,13 @@
 			<li>部门：{{msg.department}}</li>
 			<li>学号：{{msg.stuID}}</li>
 			<li>宿舍：{{msg.dormitory}}</li>
-			<li>长号：{{msg.phone_number_long}}</li>
-			<li>短号：{{msg.phone_number_short}}</li>
+			<li>长号：{{msg.phone_num_long}}</li>
+			<li>短号：{{msg.phone_num_short}}</li>
 			<li>生日：{{msg.birthday}}</li>
 			<li>是否在职：{{msg.is_work}}</li>
 			<li>QQ：{{msg.qq}}</li>
 			<li>微信：{{msg.wechat}}</li>
-			<a href="/update/{{msg.id}}">管理</a>
+			{% if managername %}<a href="/update/{{msg.id}}">管理</a> {% endif %}
 			<br>
 			{% endfor %}
 		</ul>

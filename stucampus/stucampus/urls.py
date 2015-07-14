@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from address_book.views import addMsg,main,msgUpdate,login
+from address_book.views import addMsg,main,msgUpdate,login,logout
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^addMsg$',addMsg),
+    url(r'^addMsg/$',addMsg),
     url(r'^main/$',main),
     url(r'^update/(?P<id>\d*)$',msgUpdate),
     url(r'^login/$',login),
+    url(r'^logout/$',logout),
 
     ]

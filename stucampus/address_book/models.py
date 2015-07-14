@@ -11,7 +11,7 @@ class Member(models.Model):
 	stuID=models.CharField(max_length=20,blank=True)
 	dormitory=models.CharField(max_length=20,blank=True)
 	birthday_type=models.CharField(max_length=20,blank=True)
-	#birthday=models.DateField(blank=True)
+	#birthday=models.DateField()
 	phone_num_long=models.CharField(max_length=20,blank=True)
 	phone_num_short=models.CharField(max_length=20,blank=True)
 	is_work=models.CharField(max_length=3,blank=True)
