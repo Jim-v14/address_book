@@ -1,0 +1,46 @@
+from django.shortcuts import render,render_to_response
+from address_book.models import Member
+from django import forms
+
+# Create your views here.
+class MemberMsg(Form):
+	name=forms.CharField(max_length=20)
+	grade=forms.CharField(max_length=20)
+	sex=forms.CharField(max_length=2)
+	department=forms.CharField(max_length=20)
+	stuID=forms.CharField(max_length=20)
+	dormitory=forms.CharField(max_length=20)
+	phone_num_long=forms.CharField(max_length=20)
+	phone_num_short=forms.CharField(max_length=20)
+	birthday=forms.DateField()
+	is_work=forms.IntegerField()
+	qq=forms.CharField(max_length=20)
+	wechat=forms.CharField(max_length=20)
+	photo=forms.ImageField()
+
+def addMsg(req):
+	if  req.method=='POST':
+		msg=MemberMsg(req.POST,req.FILES)
+		if msg.is_valid():
+			member=Member()
+			member.name=msg.cleaned_data['name']
+			member.grade=msg.cleaned_data['grade']
+			member.sex=msg.cleaned_data['sex']
+			member.department=msg.cleaned_data['department']
+			member.stuID=msg.cleaned_data['stuID']
+			member.dormitory=msg.cleaned_data['dormitory']
+			member.phone_num_long=msg.cleaned_data['phone_num_long']
+			member.phone_num_short=msg.cleaned_data['phone_num_short']
+			member.birthday=msg.cleaned_data['birthday']
+			member.is_work=msg.cleaned_data['is_work']
+			member.qq=msg.cleaned_data['qq']
+			member.wechat=msg.cleaned_data['wechat']
+			member.photo=msg.cleaned_data['photo']
+			member.save()
+	else:
+		msg=MemberMsg()
+	return render_to_response('manage.html',{'msg':msg})
+
+		
+
+
