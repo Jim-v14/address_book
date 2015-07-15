@@ -8,7 +8,7 @@ textarea{resize:none;}
 a{text-decoration:none;}
 
 /**/
-form{display: block;width: 30%;margin:200px auto;}
+form{display: block;width: 30%;margin:20px auto;}
 fieldset{border: solid 3px rgb(91,196,190);color:rgb(91,196,190);font-size: 20px;}
 legend{text-align: center;}
 fieldset div{padding: 10px;}

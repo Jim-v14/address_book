@@ -74,6 +74,13 @@ def main(req):
 			msgs, page_range = my_pagination(req, all_objects)
 			return render_to_response('main.html',{'msgs':msgs,'page_range':page_range,'managername':managername})
 
+def showGradeMsg(req,grade):
+	managername=req.session.get('managername','')
+	all_objects=Member.objects.filter(grade=grade)
+	msgs, page_range = my_pagination(req, all_objects)
+	return render_to_response('main.html',{'msgs':msgs,'page_range':page_range,'managername':managername})
+
+
 def msgUpdate(req,id):
 	managername=req.session.get('managername','')
 	

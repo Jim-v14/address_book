@@ -1,0 +1,77 @@
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+.main
+{
+	margin: 0 auto;
+	width: 1200px;
+}
+.header 
+{
+	text-align: center;
+	margin-bottom:20px; 
+
+}
+.searchInput
+{
+	height: 50px;
+	width: 400px;
+	font-size: 100%;
+}
+.searchBtn
+{
+	height: 50px;
+	width:80px;
+	font-size: 100%;
+
+}
+.sidebar
+{
+	float: left;
+	text-align: left;
+	width: 120px;
+	font-size: 2em;
+	background: rgb(228,238,249);
+}
+ul li 
+{
+	list-style-type:none;
+}
+a
+{
+	text-decoration:none;
+}
+.login
+{
+	position: relative;
+	left: 500px;
+	top:-20px;
+}
+.tableBox
+{
+
+	float: right;
+	width:1000px;
+	height: 500px;
+	background: rgb(236,236,236);
+}
+.msgBox
+{
+	position: relative;
+}
+.page
+{
+	position:absolute;
+	top:480px;
+}
+.management
+{
+	border: 1px;
+}
+.management a
+{
+	margin-left: 10px;
+}
